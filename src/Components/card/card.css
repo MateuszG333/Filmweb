@@ -1,0 +1,48 @@
+.card {
+    background: #1e1e1e;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover efekt */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Wnętrze */
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Tytuł */
+.card__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Opis */
+.card__description {
+    font-size: 14px;
+    color: #bdbdbd;
+    line-height: 1.5;
+}
+
+/* Rok */
+.card__year {
+    align-self: flex-start;
+    background-color: #ff3c3c;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}

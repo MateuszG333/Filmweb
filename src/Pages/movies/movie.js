@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
+import Card from "../../Components/card/card";
+import "./movie.css";
 
 export function Movies() {
-    const [movies, setMovies] = useState([]);
-    
-    useEffect(() => {
-        fetch("http://localhost:3005/api/movies")
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {setMovies(data);})
-    }, [])
+  const [movies, setMovies] = useState([]);
 
-    return (
-        <>
-            <h1>Movies List</h1>
+  useEffect(() => {
+    fetch("http://localhost:3005/api/movies")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setMovies(data);
+      });
+  }, []);
 
-            {movies.map(movie => 
-                (<h2>{movie.title}</h2>)
-            )}
-        </>
-    )
+  return (
+    <>
+      <h1>Movies List</h1>
+
+      <div className="movies">
+        {movies.map((movie) => (
+          <Card key={movie.id} movie={movie} />
+        ))}
+      </div>
+    </>
+  );
 }
-export default Movies;  
+export default Movies;
