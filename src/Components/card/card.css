@@ -1,5 +1,5 @@
 .card {
-    background: #1e1e1e;
+    background: #555454;
     color: white;
     border-radius: 12px;
     padding: 20px;
@@ -40,7 +40,7 @@
 /* Rok */
 .card__year {
     align-self: flex-start;
-    background-color: #ff3c3c;
+    background-color: #c98226;
     padding: 5px 10px;
     border-radius: 6px;
     font-size: 12px;
