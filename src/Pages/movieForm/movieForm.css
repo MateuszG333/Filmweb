@@ -1,0 +1,95 @@
+/* Kontener */
+.movie-form {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #141414, #1f1f1f);
+    padding: 40px 20px;
+    color: white;
+}
+
+/* Tytuł */
+.movie-form__title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Formularz */
+.movie-form__form {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Input + textarea */
+.movie-form__input,
+.movie-form__textarea {
+    width: 100%;
+    padding: 12px 15px;
+
+    background: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+/* Focus efekt */
+.movie-form__input:focus,
+.movie-form__textarea:focus {
+    outline: none;
+    border-color: #ff3c3c;
+    box-shadow: 0 0 8px rgba(255, 60, 60, 0.6);
+}
+
+/* Textarea */
+.movie-form__textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Button */
+.movie-form__button {
+    margin-top: 10px;
+    padding: 14px;
+
+    background: #ff3c3c;
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover */
+.movie-form__button:hover {
+    background: #ff1f1f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 60, 60, 0.5);
+}
+
+/* Active */
+.movie-form__button:active {
+    transform: scale(0.98);
+}

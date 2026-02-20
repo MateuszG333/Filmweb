@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./movieForm.css";
 
 export function MovieForm() {
   const [formData, setFormData] = useState({
@@ -9,8 +10,6 @@ export function MovieForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    console.log(formData);
 
     try {
       const result = await fetch("http://localhost:3005/api/movies", {
@@ -26,11 +25,9 @@ export function MovieForm() {
         return;
       }
 
-      const newMovie = await result.json();
-      console.log(newMovie);
-      alert("film dodany");
+      await result.json();
+      alert("Film dodany 🎬");
     } catch (e) {
-      console.error(e.message);
       alert("Coś poszło nie tak 😢");
     }
   };
@@ -45,30 +42,38 @@ export function MovieForm() {
   };
 
   return (
-    <>
-      <h1>ADD MOVIE</h1>
+    <div className="movie-form">
+      <h1 className="movie-form__title">ADD MOVIE</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className="movie-form__form" onSubmit={handleSubmit}>
         <input
-          placeholder="title"
+          className="movie-form__input"
+          placeholder="Title"
           type="text"
           name="title"
           onChange={handleChange}
-        ></input>
+        />
+
         <textarea
-          placeholder="description"
+          className="movie-form__textarea"
+          placeholder="Description"
           name="description"
           onChange={handleChange}
-        ></textarea>
+        />
+
         <input
-          placeholder="director"
+          className="movie-form__input"
+          placeholder="Director"
           type="text"
           name="director"
           onChange={handleChange}
-        ></input>
-        <button type="submit">DODAJ FILM DO BAZY</button>
+        />
+
+        <button className="movie-form__button" type="submit">
+          🎬 DODAJ FILM
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 
