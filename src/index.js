@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Nav from './Components/Nav/nav';
+import Movies from './Pages/movies/movie';
+import MovieForm from './Pages/movieForm/movieForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Nav></Nav>
+      <Routes>
+        <Route path="/" element={<Movies></Movies>}></Route>
+        <Route path="/add" element={<MovieForm></MovieForm>}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
