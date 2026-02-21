@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from './Components/Nav/nav';
 import Movies from './Pages/movies/movie';
 import MovieForm from './Pages/movieForm/movieForm';
+import MovieDetails from './Pages/movieDetails/movieDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Movies></Movies>}></Route>
         <Route path="/add" element={<MovieForm></MovieForm>}></Route>
+        <Route path="/movie/:id" element={<MovieDetails></MovieDetails>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

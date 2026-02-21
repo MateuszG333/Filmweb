@@ -6,6 +6,7 @@ export function MovieForm() {
     title: "",
     description: "",
     director: "",
+    year: "",
   });
 
   const handleSubmit = async (event) => {
@@ -67,6 +68,14 @@ export function MovieForm() {
           type="text"
           name="director"
           onChange={handleChange}
+        />
+        <input
+          className="movie-form__input"
+          placeholder="Year"
+          type="number"
+          name="year"
+          onChange={handleChange}
+          min="1970"
         />
 
         <button className="movie-form__button" type="submit">
